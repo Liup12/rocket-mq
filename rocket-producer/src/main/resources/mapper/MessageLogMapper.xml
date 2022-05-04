@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuande.rocket.mapper.MessageLogMapper">
+
+    <update id="changeStatus">
+        update message_log set status = #{newStatus} where biz_id = #{bizId} and status = #{oldStatus}
+    </update>
+    <update id="confirmSuccess">
+         update message_log set status = 2 where biz_id = #{bizId}
+    </update>
+</mapper>
